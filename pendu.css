@@ -1,0 +1,390 @@
+html{
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.8);
+}
+
+body{
+  width: 800px;
+  height: 80%;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#consoleLog{
+	position: absolute;
+	width: 200px;
+	height: 100vh;
+	top: 0;
+	left: 1rem;
+	color: white;
+}
+
+#gameWindow{
+  font-family: 'Muli', sans-serif;
+  position: relative;
+  width: 90%;
+  height: 80%;
+  background-color: rgba(255,255,255,0.5);
+}
+
+h1{
+  font-family: 'Amatic SC', cursive;
+  position: absolute;  
+  width: 100%;
+  text-align: center;
+  top: -70px;
+  left: 0;
+  right: 0;  
+}
+
+h1 #titleBegin{
+  position: relative;
+  font-size: 2rem;
+  left: -50px;
+  margin-bottom: 0;
+  color: white;
+}
+
+
+#scorePlayer{
+  position: relative;
+	display: none;
+  left: 2rem;
+  top: 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+#scorePlayer span{
+  display: inline-block;
+  position: relative;
+  font-size: 2rem; 
+  font-weight: bold;
+  top: 0.2rem;
+}
+
+/*********************************************GESTION DU TITRE ANIME*********************************************/
+h1 #titleAnime{
+  text-align: initial;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  height: 4rem;
+  font-size: 2.5rem;
+  left: 100px;
+  margin: 0 auto;
+  padding: 0;
+  transform-origin: left;
+}
+
+/*********************************************LES LETTRES ANIMEES*********************************************/
+.letterAnimated{
+  display: inline-block;
+  position: absolute;  
+}
+
+
+#letterE{
+  left: 1.4rem;  
+}
+
+#letterN{
+  left: 3rem;
+}
+
+#letterD{
+  left: 4.6rem;
+}
+
+#letterU{
+  left: 6.3rem;
+}
+/*********************************************PREMIERE ANIMATION DU MOT PENDU*********************************************/
+
+
+@keyframes fallingTitle{
+  
+  0%
+  {
+    transform: rotateZ(0deg);
+  }
+  25%
+  {
+    transform: rotateZ(105deg);
+  }
+  45%
+  {
+    transform: rotateZ(80deg);
+  }
+  75%
+  {
+    transform: rotateZ(90deg);
+  }
+  90%
+  {
+    transform: rotateZ(0deg) translateY(8rem) translateX(-5rem);
+  }
+  
+  
+  100%
+  {
+    transform: rotateZ(0deg) translateY(8rem) translateX(-5rem);
+  }
+}
+
+
+@keyframes transformP{
+  
+  0%
+  {
+    font-size: 2.5rem;
+    transform: rotateZ(0deg);
+  }
+  40%
+  {
+    font-size: 5.5rem;
+    transform: rotateZ(90deg);
+  }
+  75%
+  {
+    font-size: 5.5rem;
+    transform: rotateZ(90deg);
+  }
+  90%
+  {
+    font-size: 6rem;
+    transform: rotateZ(0deg);
+  }
+  100%
+  {
+    font-size: 6rem;
+    transform: rotateZ(0deg)
+  }
+}
+
+
+@keyframes transformE{
+  
+  0%
+  {
+    font-size: 2.5rem;
+  }
+  40%
+  {
+    font-size: 7rem;
+    left: 2.5rem; 
+  }
+  75%
+  {
+    font-size: 7rem;
+    left: 2.5rem; 
+  }
+  90%
+  {
+    font-size: 6rem;
+    left: 2rem; 
+  }
+  100%
+  {
+   font-size: 6rem;
+    left: 2rem; 
+  }
+}
+
+@keyframes transformN{
+  
+  0%
+  {
+    font-size: 2.5rem;
+    transform: rotateZ(0deg);
+  }
+  40%
+  {
+    font-size: 2.5rem;
+    left: 5rem;
+    transform: rotateZ(90deg);
+  }
+  90%
+  {
+    font-size: 2.5rem;
+    left: 5rem;
+    transform: rotateZ(90deg);
+  }
+  95%{
+    font-size: 2.5rem;
+    left: 5rem;
+    transform: rotateZ(360deg) scale(0);
+    
+  }
+  100%
+  {
+    font-size: 6rem;
+    left: 4.1rem;
+    transform: rotateZ(-360deg) scale(1);
+  }
+}
+
+@keyframes transformD{
+  
+  0%
+  {
+    font-size: 2.5rem;
+  }
+  40%
+  {
+    font-size: 2.2rem;
+    left: 6.7rem; 
+  }
+  75%
+  {
+    font-size: 2.2rem;
+    left: 6.7rem; 
+  }
+  90%
+  {
+    font-size: 6rem;
+    left: 6.4rem; 
+  }
+    100%
+  {
+    font-size: 6rem;
+    left:6.4rem;
+  }
+}
+
+@keyframes transformU{
+  
+  0%
+  {
+    font-size: 2.5rem;
+    transform: rotateZ(0deg);
+  }
+  25%
+  {
+    font-size: 6rem;
+    left: 9.2rem;
+    transform: rotateZ(100deg);
+  }
+  40%
+  {
+    font-size: 6rem;
+    left: 9.2rem;
+    transform: rotateZ(80deg) 
+  }
+  50%
+  {
+    font-size: 6rem;
+    left: 9.2rem;
+    transform: rotateZ(90deg) 
+  }
+  75%
+  {
+    font-size: 6rem;
+    left: 9.2rem;
+    transform: rotateZ(90deg) 
+  }
+  90%
+  {
+    font-size: 6rem;
+    left: 8.7rem;
+    transform: rotateZ(0deg) 
+  }
+  100%
+  {
+    font-size: 6rem;
+    left: 8.7rem;
+    transform: rotateZ(0deg) 
+  }
+}
+
+/*********************************************GESTION DU MOT MYSTERE*********************************************/
+#wordToFind{
+  width: 90%;
+  margin: 3rem 5%;
+  height: 6rem;
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: all 1s;
+}
+
+.lettreMotCache{
+  font-size: 5rem;
+  width: 5rem;
+  margin: 5px;
+  text-transform: capitalize;
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+
+/*********************************************GESTION DU BOUTON*********************************************/
+#startGameButton{
+  display: block;
+  width: 30%;
+  margin: 20px 35%;
+  height: 3rem;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+  
+}
+/*********************************************GESTION DU BANDEAU DE CONSIGNE*********************************************/
+#consigne{  
+  display: none;
+  width: 97.8%;
+  margin: 20px 0;
+  height: 3rem;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 35%;
+  font-size: 2.5rem;
+  text-align: center;  
+}
+/*********************************************GESTION DU BANDEAU DES LETTRES MORTES*********************************************/
+#wrongLetters{
+  width: 97.8%;
+  margin: 0;
+  height: 2rem;
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.roundWrong{
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  border: 1px dotted black;
+  background-color : rgba(170,170,170,0.3);
+  box-shadow: 0px 0px 10px white;
+  text-transform: capitalize;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roundWrongChecked{
+  background-color : rgba(203, 40, 4,0.3);
+  box-shadow: 0px 0px 10px rgb(203, 4, 4);  
+}
